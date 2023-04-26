@@ -1,0 +1,18 @@
+{
+   "background": {
+      "service_worker": "eventPage.js"
+   },
+   "action": {
+      "default_title": "Left-click to discard all tabs"
+   },
+   "description": "Automatically discards all tabs at startup, before they load, reducing memory footprint and unnecessary bandwidth usage. Manifest V3 ready.",
+   "icons": {
+      "128": "icon128.png",
+      "16": "icon16.png",
+      "48": "icon48.png"
+   },
+   "manifest_version": 3,
+   "minimum_chrome_version": "88",
+   "name": "Native Lazy Tabs",
+   "version": "0.8.1"
+}
