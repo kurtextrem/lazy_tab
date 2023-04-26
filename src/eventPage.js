@@ -5,20 +5,20 @@ chrome.runtime.onStartup.addListener(discardAllTabs)
 
 // discard all tabs in all windows
 function discardAllTabs() {
-	const tabs = chrome.tabs
+	const tabsAPI = chrome.tabs
 	chrome.windows.getAll({ populate: true }, windowsList => {
 		for (let i = 0; i < windowsList.length; ++i) {
-			const win = windowsList[i]
-			const minimized = win.state === 'minimized'
+			const { state, tabs } = windowsList[i]
+			const minimized = state === 'minimized'
 
-			for (let x = 0; x < win.length; ++x) {
-				const tab = win[x]
+			for (let x = 0; x < tabs.length; ++x) {
+				const tab = tabs[x]
 				if (tab.discarded || tab.pinned || (tab.active && !minimized)) {
-					return
+					continue
 				}
 
 				try {
-					tabs.discard(tab.id)
+					tabsAPI.discard(tab.id)
 				} catch (e) {}
 			}
 		}

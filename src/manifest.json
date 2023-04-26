@@ -3,9 +3,9 @@
       "service_worker": "eventPage.js"
    },
    "action": {
-      "default_title": "Left-click to discard all tabs"
+      "default_title": "Left-click to discard all tabs (except pinned)"
    },
-   "description": "Automatically discards all tabs at startup, before they load, reducing memory footprint and unnecessary bandwidth usage. Manifest V3 ready.",
+   "description": "Automatically discards all tabs at startup, before they load, reducing memory footprint and unnecessary bandwidth usage.",
    "icons": {
       "128": "icon128.png",
       "16": "icon16.png",
